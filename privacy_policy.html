@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Glider</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1a365d;
+            border-bottom: 2px solid #b83280;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 30px;
+        }
+        .update-date {
+            text-align: center;
+            font-size: 0.9em;
+            color: #718096;
+            margin-bottom: 40px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            color: #c53030;
+            font-weight: bold;
+        }
+        .callout {
+            background: #fdf2f8;
+            border-left: 4px solid #b83280;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 24px 0;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #a0aec0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🕊️ Glider Privacy Policy</h1>
+    <p class="update-date">Effective Date: October 10, 2026</p>
+
+    <div class="callout">
+        <strong>In short:</strong> Glider has no servers, no analytics and no ads. Files you give
+        it travel directly between your Mac and your own Dropbox account. We never see your files,
+        your Dropbox account or your sign-in.
+    </div>
+
+    <h2>1. Overview</h2>
+    <p>OsiVibeCode LLC, an Arizona limited liability company, publishes Glider, a macOS utility
+       that uploads files you drop on it to your Dropbox, and can keep one folder on your Mac in
+       sync with Dropbox. This policy explains what the app reads, what it sends and to whom, and
+       what it stores. Glider has no account of its own, no analytics, no advertising and no crash
+       reporting.</p>
+
+    <h2>2. Your Dropbox Account</h2>
+    <ul>
+        <li><strong>Sign-in:</strong> happens in your browser, on dropbox.com. Glider never sees
+            your Dropbox password. Dropbox gives Glider a token, which it keeps in your Mac's
+            Keychain.</li>
+        <li><strong>Access:</strong> Glider is a Dropbox "App folder" app: it can only read and
+            write inside <code>Apps › GliderApp</code> in your Dropbox, never the rest of it.</li>
+        <li><strong>Account details:</strong> Glider reads your Dropbox account's name, email
+            address and account ID, to show which account is which.</li>
+        <li><strong>Disconnecting:</strong> Remove Account in Glider revokes its access. You can
+            also disconnect Glider at any time on dropbox.com › Settings › Connected apps.</li>
+    </ul>
+
+    <h2>3. Your Files</h2>
+    <ul>
+        <li><strong>Uploads:</strong> only files and folders you choose: dropped on Glider, picked
+            in its file dialog, sent with “Upload with Glider”, or placed in a folder you chose for
+            Glider. They go directly from your Mac to Dropbox over an encrypted connection.</li>
+        <li><strong>Sync:</strong> if you turn on two-way sync for a folder, Glider also downloads
+            files from <code>Apps › GliderApp</code> into that folder, and mirrors deletions in both
+            directions. Deleted files go to your Mac's Trash and remain restorable in Dropbox.</li>
+        <li><strong>Glider never reads file contents</strong> for any purpose other than sending
+            them to Dropbox and checking they arrived intact (a checksum Dropbox also computes).</li>
+    </ul>
+
+    <h2>4. Data Stored Locally</h2>
+    <p>Glider keeps the following on your Mac. None of it is sent to us:</p>
+    <ul>
+        <li><strong>Keychain:</strong> Dropbox sign-in tokens, one per account.</li>
+        <li><strong>Accounts:</strong> each account's name, email, Dropbox folder and Glider folder
+            settings.</li>
+        <li><strong>Activity and sync state:</strong> the names, paths, sizes and dates of files
+            you uploaded or synced, the last 100 uploads, and which version of each synced file
+            is where, so nothing uploads twice.</li>
+        <li><strong>Settings:</strong> in <code>~/Library/Preferences/com.osivibecode.glider.plist</code>.</li>
+    </ul>
+    <p>Everything except the Keychain items lives in <code>~/Library/Application Support/Glider/</code>.
+       Glider's own logs never contain sign-in tokens or file contents, and file names in them are
+       hidden by macOS unless you are the Mac's administrator debugging it.</p>
+
+    <h2>5. Network Connections</h2>
+    <p>Glider connects only to Dropbox (<code>dropbox.com</code>, <code>api.dropboxapi.com</code>,
+       <code>content.dropboxapi.com</code> and <code>notify.dropboxapi.com</code>), to sign in,
+       upload, download and learn about changes. Dropbox handles your files under its own
+       <a href="https://www.dropbox.com/privacy">privacy policy</a>. Glider does not check for
+       updates and contacts no server of ours.</p>
+
+    <h2>6. Third-Party Services</h2>
+    <p>The only outside service is Dropbox, which you choose to connect. Glider contains no
+       advertising SDK, no analytics library and no other cloud service. Glider is not made by
+       or affiliated with Dropbox.</p>
+
+    <h2>7. Permissions</h2>
+    <ul>
+        <li><strong>Notifications</strong> — optional, to say when uploads finish.</li>
+        <li><strong>Open at login</strong> — optional. Managed by macOS in System Settings ›
+            General › Login Items.</li>
+        <li><strong>Files and folders</strong> — only the ones you give Glider.</li>
+    </ul>
+    <p>Glider does not ask for Accessibility, Screen Recording, Full Disk Access, your location,
+       camera, microphone or contacts.</p>
+
+    <h2>8. Data Retention &amp; Deletion</h2>
+    <p>We hold no data about you, so there is nothing to delete on our side. To remove everything
+       Glider stored:</p>
+    <ul>
+        <li>Remove each account in Glider (this also revokes its Dropbox access).</li>
+        <li>Delete <code>~/Library/Application Support/Glider/</code> and
+            <code>~/Library/Preferences/com.osivibecode.glider.plist</code>.</li>
+        <li>Move Glider to the Trash.</li>
+    </ul>
+    <p>Your files in Dropbox and in your Glider folders are yours and stay where they are.</p>
+
+    <h2>9. Children's Privacy</h2>
+    <p>Glider is a general-purpose desktop utility and collects no data from anyone, including
+       children under 13.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>If a future version of Glider ever collects anything, this page will be updated before that
+       version ships, and the change will be described in the app's release notes.</p>
+
+    <h2>11. Contact Information</h2>
+    <p>Questions about privacy in Glider:<br>
+       OsiVibeCode LLC, Arizona, United States<br>
+       Email: <a href="mailto:osi.vibe.code@gmail.com">osi.vibe.code@gmail.com</a></p>
+    <div class="footer">
+        &copy; 2026 OsiVibeCode LLC. All rights reserved.
+    </div>
+</div>
+</body>
+</html>
