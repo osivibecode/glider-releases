@@ -73,7 +73,8 @@
     <div class="callout">
         <strong>In short:</strong> Glider has no servers, no analytics and no ads. Files you give
         it travel directly between your Mac and your own Dropbox account. We never see your files,
-        your Dropbox account or your sign-in.
+        your Dropbox account or your sign-in. Apart from Dropbox, its only connection is a
+        once-a-day check for a newer version, which you can switch off.
     </div>
 
     <h2>1. Overview</h2>
@@ -124,16 +125,27 @@
        hidden by macOS unless you are the Mac's administrator debugging it.</p>
 
     <h2>5. Network Connections</h2>
-    <p>Glider connects only to Dropbox (<code>dropbox.com</code>, <code>api.dropboxapi.com</code>,
+    <p>Glider connects to Dropbox (<code>dropbox.com</code>, <code>api.dropboxapi.com</code>,
        <code>content.dropboxapi.com</code> and <code>notify.dropboxapi.com</code>), to sign in,
        upload, download and learn about changes. Dropbox handles your files under its own
-       <a href="https://www.dropbox.com/privacy">privacy policy</a>. Glider does not check for
-       updates and contacts no server of ours.</p>
+       <a href="https://www.dropbox.com/privacy">privacy policy</a>.</p>
+    <p><strong>Update checks.</strong> Glider checks for updates using the open-source
+       <a href="https://sparkle-project.org">Sparkle</a> framework. About once a day it downloads
+       a small list of available versions from <code>osivibecode.github.io</code>, and, if you
+       choose to install an update, the new version from <code>github.com</code>.</p>
+    <ul>
+        <li><strong>What is sent:</strong> an ordinary web request, which names the app and its
+            version. No identifier, no system profile, nothing about your files or Dropbox.</li>
+        <li><strong>Who sees it:</strong> GitHub, which hosts the files, receives your IP address
+            as it would for any download. We do not receive or keep these logs.</li>
+        <li><strong>Turning it off:</strong> Glider ▸ Settings ▸ "Check for updates
+            automatically". With it off, Glider checks only when you choose Check for Updates….</li>
+    </ul>
 
     <h2>6. Third-Party Services</h2>
-    <p>The only outside service is Dropbox, which you choose to connect. Glider contains no
-       advertising SDK, no analytics library and no other cloud service. Glider is not made by
-       or affiliated with Dropbox.</p>
+    <p>The outside services are Dropbox, which you choose to connect, and GitHub, which hosts
+       the updates (section 5). Glider contains no advertising SDK, no analytics library and no
+       other cloud service. Glider is not made by or affiliated with Dropbox.</p>
 
     <h2>7. Permissions</h2>
     <ul>

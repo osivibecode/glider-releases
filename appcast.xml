@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Glider</title>
+        <item>
+            <title>1.0.1</title>
+            <pubDate>Sat, 10 Oct 2026 13:59:17 -0700</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h2>Glider 1.0.1</h2>
+<p>The first release of Glider: drop files and they glide into your Dropbox.</p>
+<ul>
+  <li>Drop files on the Dock icon, the menu-bar bird or the drop zone that appears while you drag, or right-click › Services › Upload with Glider.</li>
+  <li>A Glider folder per account, kept in two-way sync with Dropbox › Apps › GliderApp.</li>
+  <li>Several Dropbox accounts, large files in resumable pieces, and a choice of copy or move.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/osivibecode/glider-releases/releases/download/v1.0.1/Glider.dmg" length="5454494" type="application/octet-stream" sparkle:edSignature="8MkXE2hCNkIb6HwMYbT9IQVNFGUsUv0Ax17imU2mJQaUb9mSNVoybX2JkNiG0XrjXSVj/16bR7GhaGdoNxTpAA=="/>
+        </item>
+    </channel>
+</rss>
