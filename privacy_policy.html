@@ -71,112 +71,147 @@
     <p class="update-date">Effective Date: October 10, 2026</p>
 
     <div class="callout">
-        <strong>In short:</strong> Glider has no servers, no analytics and no ads. Files you give
-        it travel directly between your Mac and your own Dropbox account. We never see your files,
-        your Dropbox account or your sign-in. Apart from Dropbox, its only connection is a
-        once-a-day check for a newer version, which you can switch off.
+        <strong>In short:</strong> Files you give Glider travel directly between your device and
+        your own Dropbox account. We never see your files, your Dropbox account or your sign-in.
+        To find and fix problems, Glider sends crash reports and anonymous usage statistics through
+        Google's Firebase. They never contain your files, file names, Dropbox paths or sign-in.
+        Glider has no ads, does not track you across apps and never sells data.
     </div>
 
     <h2>1. Overview</h2>
-    <p>OsiVibeCode LLC, an Arizona limited liability company, publishes Glider, a macOS utility
-       that uploads files you drop on it to your Dropbox, and can keep one folder on your Mac in
-       sync with Dropbox. This policy explains what the app reads, what it sends and to whom, and
-       what it stores. Glider has no account of its own, no analytics, no advertising and no crash
-       reporting.</p>
+    <p>OsiVibeCode LLC, an Arizona limited liability company, publishes Glider, an app for macOS,
+       iPhone, iPad and Android that uploads files you give it to your Dropbox. On the Mac it can
+       also keep one folder in sync with Dropbox; on phones you can browse, open and organize the
+       files Glider manages. This policy explains what the app reads, what it sends and to whom,
+       and what it stores. Glider has no account of its own and no advertising.</p>
 
     <h2>2. Your Dropbox Account</h2>
     <ul>
         <li><strong>Sign-in:</strong> happens in your browser, on dropbox.com. Glider never sees
-            your Dropbox password. Dropbox gives Glider a token, which it keeps in your Mac's
-            Keychain.</li>
+            your Dropbox password. Dropbox gives Glider a token, which it keeps in your Mac's or
+            iPhone's Keychain, or encrypted with an Android Keystore key on Android.</li>
         <li><strong>Access:</strong> Glider is a Dropbox "App folder" app: it can only read and
             write inside <code>Apps › GliderApp</code> in your Dropbox, never the rest of it.</li>
         <li><strong>Account details:</strong> Glider reads your Dropbox account's name, email
-            address and account ID, to show which account is which.</li>
+            address and account ID, to show which account is which. These stay on your device.</li>
         <li><strong>Disconnecting:</strong> Remove Account in Glider revokes its access. You can
             also disconnect Glider at any time on dropbox.com › Settings › Connected apps.</li>
     </ul>
 
     <h2>3. Your Files</h2>
     <ul>
-        <li><strong>Uploads:</strong> only files and folders you choose: dropped on Glider, picked
-            in its file dialog, sent with “Upload with Glider”, or placed in a folder you chose for
-            Glider. They go directly from your Mac to Dropbox over an encrypted connection.</li>
-        <li><strong>Sync:</strong> if you turn on two-way sync for a folder, Glider also downloads
-            files from <code>Apps › GliderApp</code> into that folder, and mirrors deletions in both
-            directions. Deleted files go to your Mac's Trash and remain restorable in Dropbox.</li>
+        <li><strong>Uploads:</strong> only files you choose: dropped on Glider, picked in the app,
+            shared to Glider from another app, or placed in a folder you chose for Glider. They go
+            directly from your device to Dropbox over an encrypted connection.</li>
+        <li><strong>Browsing (iPhone, iPad, Android):</strong> Glider lists, opens, renames and
+            deletes files in <code>Apps › GliderApp</code> only when you ask it to. A file you open
+            is downloaded to the app's private cache; files you save go where you choose.</li>
+        <li><strong>Sync (Mac):</strong> if you turn on two-way sync for a folder, Glider also
+            downloads files from <code>Apps › GliderApp</code> into that folder, and mirrors deletions
+            in both directions. Deleted files go to your Mac's Trash and remain restorable in Dropbox.</li>
         <li><strong>Glider never reads file contents</strong> for any purpose other than sending
             them to Dropbox and checking they arrived intact (a checksum Dropbox also computes).</li>
     </ul>
 
-    <h2>4. Data Stored Locally</h2>
-    <p>Glider keeps the following on your Mac. None of it is sent to us:</p>
+    <h2>4. Crash Reports and Usage Statistics</h2>
+    <p>Glider uses two Google services, part of <a href="https://firebase.google.com">Firebase</a>,
+       so we can see when the app crashes or fails and which features are used:</p>
     <ul>
-        <li><strong>Keychain:</strong> Dropbox sign-in tokens, one per account.</li>
-        <li><strong>Accounts:</strong> each account's name, email, Dropbox folder and Glider folder
-            settings.</li>
-        <li><strong>Activity and sync state:</strong> the names, paths, sizes and dates of files
-            you uploaded or synced, the last 100 uploads, and which version of each synced file
-            is where, so nothing uploads twice.</li>
-        <li><strong>Settings:</strong> in <code>~/Library/Preferences/com.osivibecode.glider.plist</code>.</li>
+        <li><strong>Firebase Crashlytics</strong> sends a report when Glider crashes or hits an
+            unexpected error: where in the app it happened, the app version, your device model and
+            operating system version, free memory and disk space, the time, and a random
+            installation ID. Error messages in these reports are written so they never contain
+            sign-in tokens, file contents, file names or Dropbox paths.</li>
+        <li><strong>Google Analytics for Firebase</strong> collects usage statistics: when the app
+            is opened and for how long, which screens are shown, app version, device model,
+            operating system, language, and approximate country or region (derived from your IP
+            address, which is not stored). It uses a random app-instance ID, not your name, email
+            or Dropbox account.</li>
     </ul>
-    <p>Everything except the Keychain items lives in <code>~/Library/Application Support/Glider/</code>.
-       Glider's own logs never contain sign-in tokens or file contents, and file names in them are
-       hidden by macOS unless you are the Mac's administrator debugging it.</p>
+    <p>This data is not linked to your Dropbox account or your identity, is not used for
+       advertising or to track you across other apps and websites, and is never sold. Google
+       processes it on our behalf under the
+       <a href="https://firebase.google.com/support/privacy">Firebase privacy and security terms</a>.
+       Crash reports are kept for 90 days. Detailed usage statistics are deleted after 2 months;
+       after that only aggregated, anonymous totals remain.</p>
 
-    <h2>5. Network Connections</h2>
-    <p>Glider connects to Dropbox (<code>dropbox.com</code>, <code>api.dropboxapi.com</code>,
-       <code>content.dropboxapi.com</code> and <code>notify.dropboxapi.com</code>), to sign in,
-       upload, download and learn about changes. Dropbox handles your files under its own
-       <a href="https://www.dropbox.com/privacy">privacy policy</a>.</p>
-    <p><strong>Update checks.</strong> Glider checks for updates using the open-source
-       <a href="https://sparkle-project.org">Sparkle</a> framework. About once a day it downloads
-       a small list of available versions from <code>osivibecode.github.io</code>, and, if you
-       choose to install an update, the new version from <code>github.com</code>.</p>
+    <h2>5. Data Stored on Your Device</h2>
+    <p>Glider keeps the following on your device. None of it is sent to us:</p>
     <ul>
-        <li><strong>What is sent:</strong> an ordinary web request, which names the app and its
-            version. No identifier, no system profile, nothing about your files or Dropbox.</li>
-        <li><strong>Who sees it:</strong> GitHub, which hosts the files, receives your IP address
-            as it would for any download. We do not receive or keep these logs.</li>
-        <li><strong>Turning it off:</strong> Glider ▸ Settings ▸ "Check for updates
-            automatically". With it off, Glider checks only when you choose Check for Updates….</li>
+        <li><strong>Sign-in tokens:</strong> one per Dropbox account, in the Keychain (Mac, iPhone,
+            iPad) or encrypted with an Android Keystore key (Android).</li>
+        <li><strong>Accounts:</strong> each account's name, email, upload folder and, on the Mac,
+            Glider folder settings.</li>
+        <li><strong>Activity:</strong> the names, sizes and dates of the last 100 uploads, and on the
+            Mac which version of each synced file is where, so nothing uploads twice.</li>
+        <li><strong>Settings and temporary copies:</strong> your preferences, and short-lived copies
+            of shared files waiting to upload or files you opened, deleted when no longer needed.</li>
+    </ul>
+    <p>On the Mac these live in <code>~/Library/Application Support/Glider/</code> and
+       <code>~/Library/Preferences/com.osivibecode.glider.plist</code>. On Android, sign-in tokens
+       and temporary copies are excluded from Android's cloud backup. Glider's own logs never
+       contain sign-in tokens or file contents.</p>
+
+    <h2>6. Network Connections</h2>
+    <ul>
+        <li><strong>Dropbox</strong> (<code>dropbox.com</code>, <code>api.dropboxapi.com</code>,
+            <code>content.dropboxapi.com</code>, <code>notify.dropboxapi.com</code>): to sign in,
+            upload, download and learn about changes. Dropbox handles your files under its own
+            <a href="https://www.dropbox.com/privacy">privacy policy</a>.</li>
+        <li><strong>Google Firebase</strong>: crash reports and usage statistics (section 4).</li>
+        <li><strong>Update checks (Mac, downloaded from our website):</strong> Glider uses the
+            open-source <a href="https://sparkle-project.org">Sparkle</a> framework. About once a
+            day it downloads a small list of available versions from <code>osivibecode.github.io</code>,
+            and, if you choose to install an update, the new version from <code>github.com</code>.
+            The request names the app and its version, nothing else; GitHub sees your IP address as
+            for any download. Turn it off in Glider ▸ Settings ▸ "Check for updates automatically".
+            Versions from the App Store and Google Play are updated by the store instead.</li>
     </ul>
 
-    <h2>6. Third-Party Services</h2>
-    <p>The outside services are Dropbox, which you choose to connect, and GitHub, which hosts
-       the updates (section 5). Glider contains no advertising SDK, no analytics library and no
-       other cloud service. Glider is not made by or affiliated with Dropbox.</p>
+    <h2>7. Third-Party Services</h2>
+    <p>The outside services are Dropbox, which you choose to connect; Google Firebase (section 4);
+       and, for the Mac version from our website, GitHub, which hosts updates. Glider contains no
+       advertising SDK. Glider is not made by or affiliated with Dropbox.</p>
 
-    <h2>7. Permissions</h2>
+    <h2>8. Permissions</h2>
     <ul>
-        <li><strong>Notifications</strong> — optional, to say when uploads finish.</li>
-        <li><strong>Open at login</strong> — optional. Managed by macOS in System Settings ›
+        <li><strong>Notifications</strong>: optional, to say when uploads finish or fail. Android
+            asks the first time you upload.</li>
+        <li><strong>Files and photos</strong>: only the ones you pick or share to Glider, through
+            the system's own pickers. Glider does not ask for access to all your photos or storage.</li>
+        <li><strong>Background uploads (Android)</strong>: long uploads run with a progress
+            notification, so Android doesn't stop them.</li>
+        <li><strong>Open at login (Mac)</strong>: optional, managed by macOS in System Settings ›
             General › Login Items.</li>
-        <li><strong>Files and folders</strong> — only the ones you give Glider.</li>
     </ul>
-    <p>Glider does not ask for Accessibility, Screen Recording, Full Disk Access, your location,
-       camera, microphone or contacts.</p>
+    <p>Glider does not ask for your location, contacts, camera, microphone, Accessibility, Screen
+       Recording or Full Disk Access.</p>
 
-    <h2>8. Data Retention &amp; Deletion</h2>
-    <p>We hold no data about you, so there is nothing to delete on our side. To remove everything
-       Glider stored:</p>
+    <h2>9. Data Retention &amp; Deletion</h2>
+    <p>We hold no data that identifies you. Crash reports and usage statistics are deleted
+       automatically (section 4). To remove everything Glider stored on your device:</p>
     <ul>
         <li>Remove each account in Glider (this also revokes its Dropbox access).</li>
-        <li>Delete <code>~/Library/Application Support/Glider/</code> and
-            <code>~/Library/Preferences/com.osivibecode.glider.plist</code>.</li>
-        <li>Move Glider to the Trash.</li>
+        <li>Uninstall Glider. On the Mac, also delete <code>~/Library/Application Support/Glider/</code>
+            and <code>~/Library/Preferences/com.osivibecode.glider.plist</code>.</li>
     </ul>
-    <p>Your files in Dropbox and in your Glider folders are yours and stay where they are.</p>
+    <p>Because crash reports and usage statistics are not linked to your name, email or Dropbox
+       account, we usually cannot pick out one person's data; email us (section 12) with any
+       privacy question or request and we will help as far as we can. Your files in Dropbox and in
+       your Glider folders are yours and stay where they are.</p>
 
-    <h2>9. Children's Privacy</h2>
-    <p>Glider is a general-purpose desktop utility and collects no data from anyone, including
-       children under 13.</p>
+    <h2>10. Children's Privacy</h2>
+    <p>Glider is a general-purpose utility, not directed at children under 13, and does not
+       knowingly collect personal information from them.</p>
 
-    <h2>10. Changes to This Policy</h2>
-    <p>If a future version of Glider ever collects anything, this page will be updated before that
+    <h2>11. Changes to This Policy</h2>
+    <p>If a future version of Glider collects anything new, this page will be updated before that
        version ships, and the change will be described in the app's release notes.</p>
+    <p><strong>October 10, 2026:</strong> added the iPhone, iPad and Android versions, and crash
+       reports and usage statistics through Firebase (section 4). Earlier versions of the Mac app
+       (1.0.1) send neither.</p>
 
-    <h2>11. Contact Information</h2>
+    <h2>12. Contact Information</h2>
     <p>Questions about privacy in Glider:<br>
        OsiVibeCode LLC, Arizona, United States<br>
        Email: <a href="mailto:osi.vibe.code@gmail.com">osi.vibe.code@gmail.com</a></p>
